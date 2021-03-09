@@ -12,15 +12,12 @@ while(True):
         break
     try:
         f_number = float(number)
-        if count == 0:
-            small = f_number
-            big = f_number
         count += 1
         sum_num += f_number
     except:
         print("Invalid input.")
 
-    if f_number <= small:
+    if small is None or f_number <= small:
         small = f_number
-    if f_number > big:
+    if big is None or f_number > big:
         big = f_number
