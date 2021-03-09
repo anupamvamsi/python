@@ -44,12 +44,16 @@ for line_x in file_handle:
     # print('Debug:', words)
     if len(words) == 0:  # safeguards against empty lines
         continue
+    if len(words) < 3:
+        # safeguards against index out of range (only one or two words in a line)
+        # since words[2] is being accessed, there at least have to be 3 words in 1 line
+        continue
     if words[0] != 'From':
         continue
     count += 1
     print(count, words[2], end=" | ")
 
-    ''' ERROR:
+    ''' NO SUCH ERROR ANYMORE!
     # 1 Sat | Traceback (most recent call last):
     # File "c:\dev\vs_code\python\tut_files\0005_lists.py", line 50, in <module>
     # print(count, words[2], end=" | ")
